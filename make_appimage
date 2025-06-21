@@ -1,6 +1,9 @@
 #!/bin/bash
 
 TMPDIR=$(mktemp -d)
+APPIMGTOOL=/opt/appimagetool-x86_64.AppImage
+VERSION=1.0
+
 
 mkdir ${TMPDIR}/lib
 mkdir ${TMPDIR}/img
@@ -15,7 +18,7 @@ cp appimage.d/sshgui.desktop ${TMPDIR}
 cp appimage.d/sshgui.png ${TMPDIR}
 ln -sf sshgui.png ${TMPDIR}/.DirIcon
 
-ARCH=x86_64 appimagetool-x86_64.AppImage ${TMPDIR} sshgui.appImage
+ARCH=x86_64 ${APPIMGTOOL} ${TMPDIR} sshgui-${VERSION}.appImage
 
 rm -rf ${TMPDIR}
 
