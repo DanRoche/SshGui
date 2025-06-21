@@ -1,0 +1,9 @@
+#!/bin/bash
+
+RP=$(realpath $0)
+DIR=$(dirname ${RP})
+cd ${DIR}
+
+# launch 
+#
+python3 sshgui.py $@ 

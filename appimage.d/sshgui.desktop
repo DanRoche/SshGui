@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=SshGui
+Exec=sshgui
+Icon=sshgui
+Type=Application
+Categories=Utility;

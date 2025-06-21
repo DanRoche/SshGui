@@ -1,0 +1,18 @@
+Remote .ssh management
+======================
+
+by default sshgui show 'yourself'@localhost, which means that it
+manage the current user .ssh directory.
+
+you may manage other user and host by entering :
+anotherUser@anotherHost in the form.
+
+BUT, for that to work you must have your public key in the
+remote user authorized_keys file.
+
+This is a chicken and egg problem, since you can not do
+that with this software, it has to be done manually.
+
+however, once done, you shoud be able to manage other ssh capabilites :
+new keys, config, known_host, or even authorized_keys for another user
+
