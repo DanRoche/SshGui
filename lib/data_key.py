@@ -67,6 +67,10 @@ class KeysData(datamain.MainData):
                 continue
             if bn[-4:] == ".pub":
                 continue
+            pubpath = "{}.pub".format(file)
+            if not os.path.isfile(pubpath) :
+                # no .pub, probably not a key
+                continue
             command = "ssh-keygen -l -f {}".format(file)
             ret = subprocess.run(command,capture_output=True, text=True, shell=True)
             data = ret.stdout

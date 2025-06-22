@@ -190,7 +190,7 @@ class MainGui:
         self.about.set_program_name("Ssh GUI")
         pb = GdkPixbuf.Pixbuf.new_from_file('img/ssh_logo.png')
         self.about.set_logo(pb)
-        self.about.set_version("version 1.0")
+        self.about.set_version("version 1.1")
         self.about.set_authors(["Daniel Roche <dan.y.roche@gmail.com>"])
         self.about.set_copyright("GPL")
         self.about.set_comments("Jun 2025")

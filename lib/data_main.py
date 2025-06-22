@@ -58,6 +58,8 @@ class MainData:
     def launchInTerminal(self, confnam):
         if os.path.isfile("/bin/gnome-terminal"):
             command="gnome-terminal -- ssh {}".format(confnam)
+        elif os.path.isfile("/bin/konsole"):
+            command="konsole -e \"ssh {}\"".format(confnam)
         elif os.path.isfile("/bin/xcfe4-terminal"):
             command="xfce4-terminal -e \"ssh {}\"".format(confnam)
         elif os.path.isfile("/bin/xterm"):
