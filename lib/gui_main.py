@@ -190,7 +190,7 @@ class MainGui:
         self.about.set_program_name("Ssh GUI")
         pb = GdkPixbuf.Pixbuf.new_from_file('img/ssh_logo.png')
         self.about.set_logo(pb)
-        self.about.set_version("version 1.1")
+        self.about.set_version("version 1.2")
         self.about.set_authors(["Daniel Roche <dan.y.roche@gmail.com>"])
         self.about.set_copyright("GPL")
         self.about.set_comments("Jun 2025")
@@ -200,6 +200,9 @@ class MainGui:
 
     def action_remote_download(self, widget):
         tmp = self.chm.get_text()
+        if tmp == "":
+            tmp = self.data.getCurrentUser()
+            self.chm.set_text(tmp)
         topdir = self.data.switch(tmp)
 
         self.gui_keys.reset(topdir)

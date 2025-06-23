@@ -34,7 +34,7 @@ class KnownHostsData(datamain.MainData):
 
     def getKnownHost(self, name):
 
-        command = "ssh-keygen -l -F {} -v ".format(name)
+        command = "ssh-keygen -l -F {} -v -f {}/.ssh/known_hosts".format(name,self.topdir)
         ret = subprocess.run(command,capture_output=True, text=True, shell=True)
         data = ret.stdout
         if data == "":
@@ -68,7 +68,7 @@ class KnownHostsData(datamain.MainData):
                     
     def removeKnownHost(self, name):
 
-        command = "ssh-keygen -R {}".format(name)
+        command = "ssh-keygen -R {} -f {}/.ssh/known_hosts".format(name,self.topdir)
         ret = subprocess.run(command,capture_output=True, text=True, shell=True)
         # ignore the output ?
 
