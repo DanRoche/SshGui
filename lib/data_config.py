@@ -108,12 +108,14 @@ class ConfigsData(datamain.MainData):
                 cnflist[subcateg] = {"sub":subdata}
             else:
                 line = lin0.strip()
+                if len(line) <= 4:
+                    continue
                 if line[0] == "#":
                     continue
                 for opt in self.confvalues.keys():
-                    len = self.confvalues[opt]['len']
-                    if line[:len].lower() == opt:
-                        tmp[opt] = line[len+1:]
+                    lg = self.confvalues[opt]['len']
+                    if line[:lg].lower() == opt:
+                        tmp[opt] = line[lg+1:]
 
         # the last entry at end of file
         if current is not None:
