@@ -2,7 +2,7 @@
 
 TMPDIR=$(mktemp -d)
 APPIMGTOOL=/opt/appimagetool-x86_64.AppImage
-VERSION=1.2
+VERSION=1.2.1
 
 
 mkdir ${TMPDIR}/lib
