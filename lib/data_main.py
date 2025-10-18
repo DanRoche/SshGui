@@ -19,6 +19,7 @@ import glob
 import pathlib
 import subprocess
 import tempfile
+import getpass
 
 # -------------------------
 # app import 
@@ -108,7 +109,8 @@ class MainData:
         return(help)
 
     def getCurrentUser(self):
-        user = os.getlogin()
+        #user = os.getlogin()
+        user = getpass.getuser()
         host = 'localhost'    # hardcoded for now
         full = "{}@{}".format(user,host)
         return(full)
